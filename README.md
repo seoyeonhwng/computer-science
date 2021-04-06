@@ -7,4 +7,4 @@
 <br>
 
 ### ✔️ 네트워크
-* [HTTP] (https://github.com/seoyeonhwng/computer-science/blob/main/network/http.md) 
+* [HTTP](./network/http.md) 
