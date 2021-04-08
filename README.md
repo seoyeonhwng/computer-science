@@ -13,3 +13,4 @@
 
 ### ✔️ 알고리즘
 * [이진탐색](./algorithm/binary_search.md)
+* [정렬](./algorithm/sorting.md)
