@@ -8,3 +8,8 @@
 
 ### ✔️ 네트워크
 * [HTTP](./network/http.md) 
+
+
+
+### ✔️ 알고리즘
+* [이진탐색](./algorithm/binary_search.md)
