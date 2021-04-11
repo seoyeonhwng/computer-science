@@ -112,10 +112,10 @@ Content-Type: text/html
 - 장점) 빠른 응답과 트래픽 감소를 위해 사용
 - 단점) 일관성 (유효성) 문제 발생 가능 / 캐시는 복사본이므로 원본과 달라질 수 있음
 - 해결책) Conditional GET = 조건에 맞게 GET하자 = 캐시가 바뀐 경우만 GET하자
-    - 1. Last-Modified로 리소스 변경 여부 확인
+    - Last-Modified로 리소스 변경 여부 확인
         - (클라이언트 or 프록시 서버)는 request 헤더에 'If-Modified-Since : date'를 담아서 보냄 (=내가 원하는 리소스가 date 이후로 바뀌었어?)
         - 오리진 서버는 response가 바뀌지 않았다면 304 Not Modified, 바뀌었다면 200 OK + 바뀐 data를 담아서 보냄  
-    - 2. ETag로 리소스 변경 여부 확인
+    - ETag로 리소스 변경 여부 확인
         - (클라이언트는 or 프록시 서버)는 request 헤더의 'If-None-Match'에 ETag 유효 토큰을 담아서 보냄
         - 오리진 서버는 ETag가 바뀌지 않았다면 304 Not Modified, 바뀌었다면 200 OK + 바뀐 리소스를 담아서 보냄
 - 프록시 서버 (캐싱 프록시 = 캐시 서버)
@@ -132,4 +132,3 @@ Content-Type: text/html
 ### 헷갈리지 말자
 - 쿠키는 유저 식별과 상태 관리를 위해 클라이언트 로컬에 데이터를 일시적으로 저장
 - 캐시는 빠른 응답과 트래픽 감소를 위해 리소스의 사본을 프록시 서버나 클라이언트 측에 저장
-- Last-Modified / If-Modified-Since VS ETag / If-None-Match
