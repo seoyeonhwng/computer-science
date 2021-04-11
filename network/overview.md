@@ -3,17 +3,17 @@
 - 계층화 + 계층 간의 독립성 -> 유지보수가 쉬움 (문제가 생긴 계층만 고치면 되기 때문)
 - Application Layer
   - 유저에게 제공되는 애플리케이션에서 사용하는 통신의 움직임을 결정
-  - HTTP, DNS, FTP
+  - 프로토콜 : HTTP, DNS, FTP
 - Transport Layer
   - 2대의 컴퓨터 사이의 데이터 흐름을 제공
-  - TCP, UDP
+  - 프로토콜 : TCP, UDP
 - Network Layer
   - 네트워크 상에서 패킷의 이동을 다룸 (패킷을 어느 방향으로 보낼지 정하고 해당 방향으로 전송)
   - 어떤 경로를 거쳐 상대의 컴퓨터까지 패킷을 보낼지
-  - IP
+  - 프로토콜 : IP, ARP
 - Link Layer
   - 물리적으로 연결된 노드(hop)과 노드(hop) 사이의 데이터 전송
-  - Ethernet, WIFI
+  - 프로토콜 : Ethernet, WIFI
 - Physical Layer
 
 ### 캡슐화
