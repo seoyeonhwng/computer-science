@@ -42,6 +42,7 @@
 
 ### 캐시 관련 HTTP 메시지 헤더
 - HTTP 헤더를 통해 캐시를 컨트롤 (캐시의 만료 여부 체크 + 리소스 변경 여부 체크)
+- response 메시지의 헤더에 어떻게 넣느냐에 따라 캐시 동작 방식이 결정됨
 - Cache-Control의 max-age : 캐시가 유효하다고 판단되는 최대 시간
 - Expires : 리소스의 유효 기한 날짜 / Cache-Control의 max-age가 있다면 무시됨
     - 브라우저는 Cache-Control의 max-age나 Expires가 유효하면 캐싱하고 지났다면 validation 작업을 수행
@@ -58,7 +59,7 @@
 - ETag로 리소스 변경 여부 확인 (strong)
     - (클라이언트는 or 프록시 서버)는 request 헤더의 'If-None-Match'에 ETag 유효 토큰을 담아서 보냄
     - 오리진 서버는 ETag가 바뀌지 않았다면 304 Not Modified, 바뀌었다면 200 OK + 바뀐 리소스 + 새로운 ETag를 담아서 보냄
-- 서버가 response 헤더에 어떤 필드를 사용했느냐로 결정 / Last-Modified와 ETag 둘 다 있다면 둘 다 검증함 
+- Last-Modified와 ETag 둘 다 있다면 둘 다 검증함 
 
 
 ### 헷갈리지 말자
