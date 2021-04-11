@@ -132,3 +132,4 @@ Content-Type: text/html
 ### 헷갈리지 말자
 - 쿠키는 유저 식별과 상태 관리를 위해 클라이언트 로컬에 데이터를 일시적으로 저장
 - 캐시는 빠른 응답과 트래픽 감소를 위해 리소스의 사본을 프록시 서버나 클라이언트 측에 저장
+- Last-Modified / If-Modified-Since VS ETag / If-None-Match
