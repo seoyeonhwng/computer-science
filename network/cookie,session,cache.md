@@ -52,12 +52,13 @@
     
 ### Conditional GET (조건부 요청, validation)
 - 리소스가 변경된 경우만 새로운 리소스를 받아옴
-- Last-Modified로 리소스 변경 여부 확인
+- Last-Modified로 리소스 변경 여부 확인 (weak)
     - (클라이언트 or 프록시 서버)는 request 헤더에 'If-Modified-Since : date'를 담아서 보냄 (=내가 원하는 리소스가 date 이후로 바뀌었어?)
     - 오리진 서버는 response가 바뀌지 않았다면 304 Not Modified, 바뀌었다면 200 OK + 바뀐 data를 담아서 보냄  
-- ETag로 리소스 변경 여부 확인
+- ETag로 리소스 변경 여부 확인 (strong)
     - (클라이언트는 or 프록시 서버)는 request 헤더의 'If-None-Match'에 ETag 유효 토큰을 담아서 보냄
     - 오리진 서버는 ETag가 바뀌지 않았다면 304 Not Modified, 바뀌었다면 200 OK + 바뀐 리소스 + 새로운 ETag를 담아서 보냄
+- 서버가 response 헤더에 어떤 필드를 사용했느냐로 결정 / Last-Modified와 ETag 둘 다 있다면 둘 다 검증함 
 
 
 ### 헷갈리지 말자
