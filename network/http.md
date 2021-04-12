@@ -2,7 +2,6 @@
 
 - 인터넷에서 데이터를 주고 받을 수 있는 프로토콜
 - 클라이언트와 서버가 request/response 메시지를 교환
-- TCP/IP를 이용하는 응용 프로토콜
 
 ### 단방향성
 - 클라이언트가 서버로 요청을 보내면 이에 대한 응답을 받는 단방향 통신
@@ -14,9 +13,17 @@
 
 ### 무상태성 (stateless)
 - 이전에 주고 받았던 request/response를 기억하지 않음
-- 장점) 데이터를 매우 빠르고 확실하게 처리 + 서버의 리소스 절약
+- 장점) 상태를 저장하지 않기 때문에 요청을 빠르게 처리 + 서버의 리소스 절약
 - 단점) 상태를 기억해야하는 상황도 존재 (ex. 로그인)
 - 이를 보완하고 상태를 기억하기 위해 cookie, seesion, token 등을 사용
+
+### TCP/IP를 이용하는 응용 프로토콜
+- TCP 위에서 동작하기 때문에 HTTP 메시지를 주고 받기 전에 TCP connection을 맺어야함
+1. 클라이언트가 80번 포트로 TCP SYN 패킷을 보냄
+2. 서버가 TCP ACK+SYN 패킷으로 응답
+3. 클라이언트가 HTTP request 메시지를 전송 (여기에 TCP ACK가 piggyback)
+4. 서버가 HTTP response를 전송
+5. TCP connection을 종료
 
 ### persistent connection
 
@@ -24,7 +31,7 @@
 - request/response 메시지의 헤더에 "Connection: keep-alive" 를 추가해서 구현
 - HTTP1.1에서는 기본적으로 지원하기 때문에 "Connection: close"으로 사용하지 않을 수 있음
 - 장점) TCP 연결/종료로 인한 오버헤드 감소 + 응답 속도 빨라짐
-- 단점) 서버에 연결된 모든 클라이언트의 TCP 연결이 계속 늘어나면 서버의 자원이 고갈됨 → 클라이언트의 접속이 잦은 메인 페이지는 persistent connection을 고려해야함
+- 단점) 서버에 연결된 모든 클라이언트의 TCP 연결이 계속 늘어나면 서버의 자원이 고갈됨 → 클라이언트의 접속이 잦은 메인 페이지는 non-persistent connection을 고려해야함
 - HTTP pipelineing을 가능하게 함
     - response를 받을 때까지 기다리지 않고 다음 request를 보낼 수 있음
     - 문제점) 순차적으로 request를 처리하므로 먼저 온 request가 끝날때까지 기다려야함 = Head Of Line Blocking 문제
