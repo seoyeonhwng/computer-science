@@ -23,11 +23,13 @@
 - propagation delay : 마지막 비트가 다음 라우터까지 전송되는 시간
 
 ### processes communicating
-<img src="https://user-images.githubusercontent.com/49056225/114344192-5481e580-9b9a-11eb-81fa-790746ff6601.png" width="500" height="250"><br>
+<img src="https://user-images.githubusercontent.com/49056225/114344192-5481e580-9b9a-11eb-81fa-790746ff6601.png" width="600" height="300"><br>
 - 통신이란 클라이언트 프로세스와 서버 프로세스 사이의 통신
 - 같은 호스트내에서 두 프로세스는 IPC로 통신 VS 다른 호스트의 두 프로세스는 메시지를 교환하여 통신
 - 프로세스들은 **소켓**이라는 인터페이스를 통해서 메시지를 주고 받음
-  - socket 주소 = IP 주소 (어떤 컴퓨터인지) + port 번호 (어떤 프로세스인지)
+  - 소켓 = 프로세스간 통신을 위해 OS가 제공하는 API
+  - 소켓 주소 = IP 주소 (어떤 컴퓨터인지) + port 번호 (어떤 프로세스인지)
+  - transport layer로 TCP를 사용하면 TCP소켓, UDP를 사용하면 UDP소켓을 사용
 
 ### OSI 7 layer
 - 네트워크에서 일어나는 통신 과정을 7단계로 나누어 정한 표준
