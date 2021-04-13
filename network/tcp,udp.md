@@ -55,3 +55,15 @@
       - 같은 번호의 ACK를 중복해서 3번 받으면 (총 4번) 해당 번호의 패킷을 유실로 판단하고 재전송
       - ex) 10번 패킷이 유실 -> receiver는 11, 12번 패킷이 와도 계속 ACK 10을 전송 -> sender는 10번 패킷 유실로 판단!
       - timeout전에 패킷 유실을 알 수 있으므로 fast transmission이라고 부름 
+
+### TCP의 Flow Control
+- sender는 receive buffer(=spare room + TCP data)의 여유 공간보다 더 많은 데이터를 전송하지 않음
+- receiver가 받을 수 있는 만큼만 전송
+- 동작 과정
+  - receiver는 세그먼트의 window size에 현재 버퍼의 여유 공간을 담아서 전송
+  - sender는 해당 여유 공간만큼만 세그먼트를 전송
+- receiver가 window size를 0으로 설정한 세그먼트를 전송하는 경우
+  - sender는 더이상 데이터를 전송하지 않음 -> 언제까지?
+  - sender는 데이터가 없는 세그먼트를 주기적으로 보내고 이에 대한 ACK를 받아 ACK의 window size를 확인하여 receiver의 상태를 확인
+
+### TCP의 connection
