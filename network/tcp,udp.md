@@ -8,12 +8,12 @@
 <img src="https://user-images.githubusercontent.com/49056225/114353116-9b2a0c80-9ba7-11eb-9318-f090107c7f66.png" width="500" height="300">
 
  ### TCP 특징
+ <img src="https://user-images.githubusercontent.com/49056225/114558361-8fbd0b00-9ca5-11eb-8abd-22d79599b9dc.png" width="500" height="300"><br>
  - point-to-point : 소켓 한 쌍의 통신
  - reliable, in-order byte streams : byte 스트림을 에러, 손실없이 순서대로 전송
  - connection-oriented : 데이터를 주고받기 전에 handshaking
  - flow / congestion control : receiver가 받을 수 있는 만큼 전송
  - full duplex data (같은 TCP 연결에서 데이터가 양방향으로 전송 가능)
- <img src="https://user-images.githubusercontent.com/49056225/114558361-8fbd0b00-9ca5-11eb-8abd-22d79599b9dc.png" width="500" height="300"><br>
  
 ### TCP 헤더 (헤더를 보고 TCP의 모든 것을 설명할 수 있어야함!!)
 <img src="https://user-images.githubusercontent.com/49056225/114547013-d3f5de80-9c98-11eb-8028-ef23c6748277.png" width="600" height="450"><br>
