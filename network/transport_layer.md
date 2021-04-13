@@ -9,6 +9,7 @@
 ### multiplexing / demultiplexing
 <img src="https://user-images.githubusercontent.com/49056225/114351381-7c2a7b00-9ba5-11eb-9a1b-8c05f297895d.png" width="500" height="300"><br>
 - 'host-to-host delivery'를 'process-to-process delivery'로 확장 
+- transport layer에서는 소켓 인터페이스를 직접 다루기 때문에 해당 기능을 제공 (UDP, TCP 둘다!!)
 - multiplexing (다중화)
   - 여러 소스(소켓)의 입력을 하나의 출력(세그먼트)으로 묶는 작업
   - application layer의 어떤 소켓으로 내려온 데이터라도 잘라서 세그먼트로 만들고 
