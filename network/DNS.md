@@ -14,7 +14,7 @@
 ### DNS 동작 과정
 - 먼저 Local DNS(컴퓨터에 미리 설정되어 있는 DNS)에 해당 도메인에 대한 IP주소가 있는지 확인
 - Local DNS에 없다면 여러 DNS 서버에게 물어봐서 IP주소를 알아냄 (Recursive query)
-<img src="https://user-images.githubusercontent.com/49056225/114833433-8a2d0580-9e0a-11eb-8504-3447a0587b9e.png" width="600" height="400">
+<img src="https://user-images.githubusercontent.com/49056225/114837760-04f81f80-9e0f-11eb-805e-20d18111d89c.png" width="600" height="400">
 
 ### DNS는 UDP를 사용
 - DNS는 HTTP request를 위한 준비 동작이므로 패킷 유실 가능성이 있어도 속도가 빠른 UDP 선택
