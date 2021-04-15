@@ -2,6 +2,7 @@
 - pivot을 선정하고
 - pivot 앞에는 pivot보다 작은 값을, pivot 뒤에는 pivot보다 큰 값이 오도록 두 개의 리스트로 분할
 - 분할된 리스트에 대해 재귀적으로 반복
+- pivot에 의해 균형있게 분할되지 못한 경우 O(n^2)가 될 수 있음
 
 ```
 def quicksort(A, lo, hi):
