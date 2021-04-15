@@ -17,6 +17,7 @@
 * [TCP, UDP](./network/tcp,udp.md)
 
 
-### ✔️ 알고리즘
+### ✔️ 알고리즘 (라이브 코딩 가능하게!)
 * [이진탐색](./algorithm/binary_search.md)
 * [정렬](./algorithm/sorting.md)
+* [다이나믹 프로그래밍](./algorithm/dp.md)
