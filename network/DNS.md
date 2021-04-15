@@ -4,7 +4,7 @@
 - DNS를 여러 서버로 나누고 계층 구조로 구성 (분산 계층 데이터베이스)
 
 ### DNS 서버의 종류
-- DNS recursor : iterative query를 받는 서버 
+- DNS resolver : iterative query를 받는 서버 
 - root name server : 최상위 서버
 - TLD name server : 도메인 확장자를 공유하는 모든 도메인 이름의 정보를 유지하는 서버
   - ex) .com TLD 네임서버는 '.com'으로 끝나는 모든 웹사이트의 정보를 알고있음
