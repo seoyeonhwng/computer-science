@@ -11,9 +11,10 @@
 * [overview](./network/overview.md)
 * [HTTP](./network/http.md)
 * [HTTPS](./network/https.md)
+* [DNS](./network/DNS.md)
 * [쿠키,세션,캐시](./network/cookie,session,cache.md)
 * [Transport Layer](./network/transport_layer.md)
-* [TCP,UDP](./network/tcp,udp.md)
+* [TCP, UDP](./network/tcp,udp.md)
 
 
 ### ✔️ 알고리즘
