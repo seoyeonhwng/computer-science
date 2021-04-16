@@ -1,28 +1,34 @@
 ## 퀵정렬
 - pivot을 선정하고
-- pivot 앞에는 pivot보다 작은 값을, pivot 뒤에는 pivot보다 큰 값이 오도록 두 개의 리스트로 분할
-- 분할된 리스트에 대해 재귀적으로 반복
+- pivot보다 작은, 큰, 같은 값을 각각 저장
+- 작은/큰 값을 저장한 리스트에 대해 재귀적으로 퀵정렬 
 - pivot에 의해 균형있게 분할되지 못한 경우 O(n^2)가 될 수 있음
 
 ```
-def quicksort(A, lo, hi):
-  def partition(lo, hi):
-    pivot = A[hi]
-    left = lo
-    for right in range(lo, hi):
-      if A[right] < pivot:
-        A[right], A[left] = A[left], A[right]
-        left += 1
-    
-    A[left], A[hi] = A[hi], A[left]
-    return left
-       
-  if lo < hi:
-    # 두 개의 리스트로 분할
-    pivot = partition(lo, hi)
-    # 각 리스트에 대해서 재귀 호출
-    quicksort(A, lo, pivot-1)
-    quicksort(A, pivot+1, hi)
+def quicksort(arr):
+  # 종료 조건
+  if len(arr) == 1:
+      return arr
+      
+  # pivot 선정 (중앙에 위치한 값으로)
+  mid = len(arr) // 2
+  pivot = arr[mid]
+  
+  # pivot을 기준으로 리스트 분할
+  small, equal, large = [], [], []
+  for a in arr:
+      if a < pivot:
+          small.append(a)
+      elif a > pivot:
+          larget.append(a)
+      else:
+          equal.append(a)
+        
+  # small, large에 대해 재귀적으로 반복
+  small = quicksort(small)
+  large = quicksort(large)
+  
+  return small + equal + large
 ```
 
 ## 병합정렬
