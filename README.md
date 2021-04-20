@@ -16,6 +16,7 @@
 * [Transport Layer](./network/transport_layer.md)
 * [TCP, UDP](./network/tcp,udp.md)
 * [Network Layer](./network/ip.md)
+* [Load Balancing](./network/load_balacing.md)
 
 
 ### ✔️ 알고리즘 (for 라이브 코딩)
