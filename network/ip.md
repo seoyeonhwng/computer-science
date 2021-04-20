@@ -54,7 +54,7 @@
 - 라우터를 거치지 않고 서로 접근 가능한 집합 -> 라우터는 서브넷들의 교집합
 
 ### NAT (Network Address Translation)
-<img src="https://user-images.githubusercontent.com/49056225/115200711-78f83780-a12f-11eb-8224-a23183f159e3.png" width="600" height="400">
+<img src="https://user-images.githubusercontent.com/49056225/115200711-78f83780-a12f-11eb-8224-a23183f159e3.png" width="600" height="400"><br>
 - IP주소가 부족해짐 → IP주소를 재사용해서 다른 사람과 같이 쓰자!!
   - 같은 네트워크 안의 사용자들은 각자 고유한 IP주소를 가짐
   - 같은 IP주소를 서로 다른 네트워크 사용자도 사용할 수 있음
