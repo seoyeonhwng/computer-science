@@ -11,7 +11,7 @@
 - 비연결형 / 패킷 분할(fragmentation) 지원
 
 ### IP 패킷의 헤더
-<img src="https://user-images.githubusercontent.com/49056225/115352218-1320b400-a1f2-11eb-816c-971748caabd4.png" width="500" height="400">
+<img src="https://user-images.githubusercontent.com/49056225/115352218-1320b400-a1f2-11eb-816c-971748caabd4.png" width="500" height="400"><br>
 - source와 destination의 IP 주소
 - fragmentation 관련 헤더
     - identifier : 어떤 패킷의 fragment인지 나타냄 (같은 패킷이라면 해당 필드의 값 동일)
