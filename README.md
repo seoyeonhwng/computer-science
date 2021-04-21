@@ -12,11 +12,12 @@
 * [HTTP](./network/http.md)
 * [HTTPS](./network/https.md)
 * [DNS](./network/DNS.md)
+* [프록시, 게이트웨이](./network/proxy.md)
+* [로드 밸런싱](./network/load_balancing.md)
 * [쿠키,세션,캐시](./network/cookie,session,cache.md)
 * [Transport Layer](./network/transport_layer.md)
 * [TCP, UDP](./network/tcp,udp.md)
 * [Network Layer](./network/ip.md)
-* [로드 밸런싱](./network/load_balancing.md)
 
 
 ### ✔️ 알고리즘 (for 라이브 코딩)
