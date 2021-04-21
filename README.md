@@ -18,7 +18,7 @@
 * [Transport Layer](./network/transport_layer.md)
 * [TCP, UDP](./network/tcp,udp.md)
 * [Network Layer](./network/ip.md)
-
+* [Link Layer](./network/link_layer.md)
 
 ### ✔️ 알고리즘 (for 라이브 코딩)
 * [이진탐색](./algorithm/binary_search.md)
