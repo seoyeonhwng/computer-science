@@ -20,6 +20,11 @@
 * [Network Layer](./network/ip.md)
 * [Link Layer](./network/link_layer.md)
 
+### ✔️ 데이터베이스
+* [DBMS](./database/database.md)
+* [인덱스](./database/index.md)
+* [트랜잭션](./database/transaction.md)
+
 ### ✔️ 알고리즘 (for 라이브 코딩)
 * [이진탐색](./algorithm/binary_search.md)
 * [정렬](./algorithm/sorting.md)
