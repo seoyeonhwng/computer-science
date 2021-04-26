@@ -22,6 +22,7 @@
 ### Lock의 종류
 - S-lock (Shared Lock) : 트랜잭션에서 READ를 목적으로 데이터에 접근할때 사용 -> 다른 트랜잭션과 공유 가능
 - X-lock (Exclusive Lock) : 트랜잭션에서 UPDATE를 목적으로 데이터에 접근할때 사용 -> 다른 트랜잭션과 공유 불가능
+- lock -> 데드락 문제 발생 가능!
 
 ### Isolation Level
 - 트랜잭션에서 일관성 없는 데이터를 허용하는 수준
