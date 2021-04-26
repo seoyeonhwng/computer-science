@@ -1,5 +1,5 @@
 ### DBMS의 구조
-<img src="https://user-images.githubusercontent.com/49056225/116077167-23dc9880-a6d0-11eb-952a-eff0d446a0d0.png" width="600" height="400">
+<img src="https://user-images.githubusercontent.com/49056225/116077167-23dc9880-a6d0-11eb-952a-eff0d446a0d0.png" width="600" height="400"><br>
 - DBMS는 하드 디스크에 데이터를 저장 + 데이터 일부분만 메인 메모리에 유지
 - 데이터를 page단위로 저장 -> 디스크에서 데이터를 읽거나 쓸 때에 페이지 단위로 이루어짐
 - 페이지 버퍼 관리자 : 메인 메모리에 유지하는 페이지들을 관리하는 모듈
