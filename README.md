@@ -24,6 +24,9 @@
 * [DBMS](./database/database.md)
 * [인덱스](./database/index.md)
 * [트랜잭션](./database/transaction.md)
+* [동시성](./database/concurrency.md)
+* [replication/partitioning](./database/replication.md)
+* [NoSQL](./database/nosql.md)
 
 ### ✔️ 알고리즘 (for 라이브 코딩)
 * [이진탐색](./algorithm/binary_search.md)
