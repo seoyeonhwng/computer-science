@@ -65,7 +65,7 @@
 - multi-thread
   - 하나의 프로세스 안에서 여러개의 쓰레드가 처리
   - context switching 비용이 적음 (프로세스 자원을 공유하기 때문)
-  - 단점) 하나의 스레드가 종료되면 전체 스레드가 종료 / 자원을 공유하는 만큼 충돌 주의 (thread-safe 하게)
+  - 단점) 하나의 스레드가 종료되면 전체 스레드가 종료 / 자원을 공유하는 만큼 충돌 주의 (thread-safe 하게) -> 동기화!!
 - multi-thread가 multi-process보다 좋은 이유
   - context switching시 시간과 자원 손실이 적다
   - stack을 제외한 모든 메모리를 공유하기 때문에 자원을 효율적으로 사용 가능
