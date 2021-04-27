@@ -48,3 +48,14 @@
 ### DMA (Direct Memory Access) controller
 - CPU와 함께 메인 메모리에 접근 가능 -> I/O장치의 local buffer에서 데이터를 읽어 메인 메모리에 복사
 - I/O 장치가 CPU에게 인터럽트를 너무 많이 걸어서 CPU가 방해받는 것을 방지하기 위한 장치
+
+---
+### Synchronous I/O vs Asynchronous I/O
+- 동기식 입출력 (Synchronous I/O)
+    - I/O 작업 요청 후 입출력 작업이 끝날때까지 사용자 프로그램이 기다림
+    - 구현 방법 1 : I/O가 끝날때까지 CPU를 아무일도 하지 않고 기다림 (CPU 낭비)
+    - 구현 방법 2 : I/O가 끝날때까지 해당 프로그램에게서 CPU를 빼앗고 다른 프로그램에게 CPU를 줌
+        - CPU가 낭비되지 않음 / 현대에는 해당 방식으로 구현함 
+- 비동기식 입출력 (Asynchronous I/O)   
+    - I/O 작업 요청 후 입출력 작업이 끝날때까지 기다리지 않고 바로 CPU 제어권을 얻을 수 있음
+- 동기/비동기식 둘다 I/O작업의 완료는 인터럽트를 통해 알 수 있음
