@@ -14,8 +14,9 @@
   - 프로세스들이 CPU를 번갈아 사용하기 때문에 프로세스가 어느 지점까지 실행되었는지 정확하게 알아야함
   - CPU 수행 상태를 나타내는 하드웨어 문맥 (프로세스가 명령어를 어디까지 실행했는가)
     - Program Counter (PC가 어딜 가리키고 있는가) / 각종 register (레지스터에 어떤 값이 저장되었는가)
-  - 프로세스의 주소 공간
-    - code, data, stack, heap (프로세스의 주소 공간에 어떤 값이 저장되었는가)
+
+### 프로세스의 주소 공간
+<img src="https://user-images.githubusercontent.com/49056225/116216546-b4c07c00-a783-11eb-9f47-a270a573cf1f.png" width="600" height="400"><br>
 
 ### 프로세스의 상태
 <img src="https://user-images.githubusercontent.com/49056225/116199452-1972db00-a772-11eb-860e-a528ff316759.png" width="500" height="300"><br>
