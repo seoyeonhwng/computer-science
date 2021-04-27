@@ -2,7 +2,7 @@
 <img src="https://user-images.githubusercontent.com/49056225/116192641-1b846c00-a769-11eb-9b53-5a57e379ff11.png" width="700" height="500"><br>
 - CPU는 매 클럭마다 두가지 일을 반복
 1. 메인 메모리에서 실행 중인 사용자 프로그램의 instruction을 하나씩 읽어와서 수행
-    - Program Counter가 가리키는 instruction을 실행
+    - CPU의 PC(Program Counter)가 가리키는 instruction을 실행
     - 만약 수행해야 할 instruction이 IO작업이라면?
       - 사용자 프로그램은 IO작업을 할 수 없기 때문에 운영체제의 커널 함수를 실행 (인터럽트 발생)
       - 인터럽트가 발생하면 CPU 제어권이 운영체제로 넘어감
