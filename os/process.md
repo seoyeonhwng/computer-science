@@ -18,7 +18,7 @@
     - code, data, stack, heap (프로세스의 주소 공간에 어떤 값이 저장되었는가)
 
 ### 프로세스의 상태
-<img src="https://user-images.githubusercontent.com/49056225/116199452-1972db00-a772-11eb-860e-a528ff316759.png" width="500" height="300">
+<img src="https://user-images.githubusercontent.com/49056225/116199452-1972db00-a772-11eb-860e-a528ff316759.png" width="500" height="300"><br>
 - Running : CPU 제어권을 가지고 명령어를 수행 중인 상태 / running 상태의 프로세스는 매 순간 하나!
 - Ready : 다른 모든 조건을 만족하고 CPU만 얻으면 명령어를 수행할 수 있는 상태
 - waiting(blocked) : CPU를 주어도 당장 명령어를 수행할 수 없는 상태 (ex. I/O 작업 완료를 기다리는 중)
