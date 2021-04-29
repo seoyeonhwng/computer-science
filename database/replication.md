@@ -35,14 +35,13 @@
 
 ### Sharding (horiziontal partitioning)
 - 데이터를 여러개의 shard로 나눠서 저장 (균일하게 저장해야함)
-- shard key = 새로운 행이 추가되면 어떤 샤드로 갈지 결정하는 key (shard key가 0이면 shard0으로)
 - sharding의 여러가지 방법 (샤딩 전략)
   - hash sharding (modular sharding)
-    - 해시 함수를 사용하여 shard key를 결정 (해시 함수의 input은 레코드의 특정 컬럼이나 id)
+    - shard key를 해싱/모듈러 연산한 결과로 어느 샤드로 갈지 결정
     - range sharding에 비해 데이터가 균일하게 분산 / DB를 증설하면 이미 적재된 데이터의 재정렬이 필요함
     - 데이터양이 일정수준에서 유지되는 서비스에 적합
   - range sharding
-    - 특정 컬럼의 값의 범위에 따라 shard key를 결정
+    - shard key 값의 범위에 따라 어느 샤드로 갈지 결정
     - DB를 증설해도 재정렬이 필요하지 않음 / 일부 DB에 데이터가 몰릴 수 있음
 - 샤딩은 프로그래밍/운영적 복잡도가 높아지기 때문에 그전에 다른 해결방안을 충분히 고민해야함
   - 어떤 연산이 자주 사용되는지/언제 어떻게 트래픽이 몰리는지 먼저 파악해야함!!! 
