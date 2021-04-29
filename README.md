@@ -30,7 +30,7 @@
 
 ### ✔️ 운영체제
 * [운영체제](./os/os.md)
-* [전체적인 흐름](./os/system structure.md)
+* [전체적인 흐름](./os/system_structure.md)
 * [프로세스](./os/process.md)
 * [동기화](./os/synchronization.md)
 * [메모리 관리](./os/memory.md)
