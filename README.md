@@ -28,6 +28,13 @@
 * [replication/partitioning](./database/replication.md)
 * [NoSQL](./database/nosql.md)
 
+### ✔️ 운영체제
+* [운영체제](./os/os.md)
+* [전체적인 흐름](./os/system structure.md)
+* [프로세스](./os/process.md)
+* [동기화](./os/synchronization.md)
+* [메모리 관리](./os/memory.md)
+
 ### ✔️ 알고리즘 (for 라이브 코딩)
 * [이진탐색](./algorithm/binary_search.md)
 * [정렬](./algorithm/sorting.md)
