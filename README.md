@@ -25,6 +25,7 @@
 * [인덱스](./database/index.md)
 * [트랜잭션](./database/transaction.md)
 * [동시성](./database/concurrency.md)
+* [조인](./database/join.md)
 * [replication/partitioning](./database/replication.md)
 * [NoSQL](./database/nosql.md)
 
