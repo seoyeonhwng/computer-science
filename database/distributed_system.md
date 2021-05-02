@@ -6,7 +6,18 @@
   - easy scaling : 기계 1대를 추가하면 되기 때문에 성능 향상이 쉽고 한계가 없음
   - fault tolerance : 하나가 고장이 나도 여러 대가 존재하기 때문에 서비스가 중단되지 않음
   - low laterency (낮은 지연시간) : 물리적으로 가장 가까운 노드가 요청을 처리 -> 지연시간 감소 
-  
+
+### CAP 이론
+- 분산 데이터베이스/시스템에서 consistency, availabilty, partition tolerance 3가지를 모두 만족하는 것은 불가능함 / 2가지만!
+- Consistency : 모든 요청은 최신 데이터 또는 에러를 응답받음
+- Availability : 모든 요청은 정상 응답을 받음 (항상 서비스 가능!)
+- Partition Tolerance : 네트워크 장애로 인해 노드간 통신이 실패하는 경우라도 시스템은 정상 동작함
+- CP 시스템
+  - 일관성을 위해 데이터 변경은 존재하는 모든 노드에 복제되어야 완료됨 / 가용성과 성능에 악영향 
+- AP 시스템
+  - 가용성을 위해 데이터 변경이 모든 노드에 복제되지 않아도 데이터를 반환 / 일관성이  
+
+
 ### Replication
 <img src="https://user-images.githubusercontent.com/49056225/116812039-82e65580-ab87-11eb-8a35-10f56f6cfd18.png" width="600" height="500"><br>
 - DB를 Master/Slave로 나눠서 동일한 데이터를 저장하는 방식 / 수직적 구조
