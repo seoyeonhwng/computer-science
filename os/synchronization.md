@@ -2,9 +2,11 @@
 
 ### Process synchronization
 - 멀티 프로세스(스레드) 환경에서 공유 데이터를 동시에 접근하는 경우 데이터 불일치가 발생할 수 있음
+- ex) system call을 하는 동안 커널 주소공간의 데이터를 접근 + 이 작업 중간에 CPU를 선점하면 race condition 발생
 - 일관성을 유지하기 위해 프로세스간 실행 순서를 정해주어야 함
 - race condition : 여러 프로세스(스레드)들이 동시에 공유 데이터에 접근하는 상황
   - race condition을 막기 위해서 동기화가 필요함!!
+
 
 ### critical section problem
 - critical section : 공유 데이터를 접근하는 코드
