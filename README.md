@@ -26,8 +26,9 @@
 * [트랜잭션](./database/transaction.md)
 * [동시성](./database/concurrency.md)
 * [조인](./database/join.md)
-* [replication/partitioning](./database/replication.md)
 * [NoSQL](./database/nosql.md)
+* [분산 시스템](./database/distributed_system.md)
+
 
 ### ✔️ 운영체제
 * [운영체제](./os/os.md)
