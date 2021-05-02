@@ -5,10 +5,11 @@
 - physical address
   - 메인 메모리에 올라가는 실제 위치
   - 아래 주소에는 커널, 상위 주소에는 여러 프로그램들이 섞여서 올라가있음
+- 주소 바인딩 : logical address를 physical address로 변환
 
 ### MMU(Memory-Management Unit)
 - logical address를 physical address로 맵핑해주는 하드웨어
-- 사용자 프로그램, CPU 둘다 logical address를 사용하고 MMU가 그때그때 주소 변환을 해줌
+- 사용자 프로그램, CPU 둘다 logical address를 사용하고 MMU가 그때마다 주소 변환을 해줌
 - logical address + base register = physical address
   - base register : 물리적 메모리에서 해당 프로세스의 시작 위치를 저장
   - limit register : 프로그램의 크기를 저장 (논리적 주소의 범위를 결정)
@@ -18,10 +19,13 @@
 - 프로세스 전체를 메모리에서 디스크로, 디스크에서 메모리로 내쫓는 것 (swap in/swap out)
 - 중기 스케쥴러에 의해 swap out 시킬 프로세스를 선정
 
-### fragmentation (단편화)
-- 메모리에 프로세스들을 적재하고 제거하다보면 메모리에 생기는 작은 공간들
-- 외부 단편화 (external fragmentation) : 메모리 공간 중 사용하지 못하는 부분
-- 내부 단편화 (internal fragmentation) : 파티션 내부에서 사용되지 않는 부분
+---
+### 물리적 메모리 할당 
+- 물리적 메모리 (메인 메모리)를 어떻게 관리할 것인가
+- 메모리는 일반적으로 두 영역으로 나뉘어 사용됨
+  - 커널 상주 영역 : 인터럽트 벡터와 함께 낮은 주소 영역 사용
+  - 사용자 프로세스 영역 : 높은 주소 영역 사용
+    - 사용자 프로세스 영역의 할당 방법 : contiguous allocation / noncontiguous allocation 
 
 ### contiguous allocation
 - 각 프로그램를 메모리에 연속적인 공간에 적재하는 방식 (프로세스 통째로!)
@@ -43,18 +47,37 @@
   - 프로그램의 주소 공간 (논리적 메모리)를 의미 단위로 분할 / 서로 다른 크기
   - 외부 단편화 발생
 
+### paging
+<img src="https://user-images.githubusercontent.com/49056225/116805234-f83e3000-ab5f-11eb-801f-a2aab1b23c75.png" width="600" height="400"><br>
+- page table은 메인 메모리에 상주
+- 2번의 메모리 접근 (주소 변환을 위한 page table 접근 + 실제 물리적 주소 접근)
+- 주소변환을 위한 별도의 캐시 TLB를 두자!
+  - TLB는 page table에서 자주 참조되는 entry를 캐싱 / (논리적 페이지, 물리적 페이지) 쌍을 저장
+  - TLB hit한 경우는 메모리 접근 1번 / TLB mis한 경우는 메모리 접근 2번
+- TLB VS Page Table
+  - TLB는 parallel search(테이블 전체를 한번에 쫙)로 해당 페이지의 frame number를 확인
+  - page table은 해당 페이지 번호를 배열의 인덱스처럼 사용해서 frame number를 확인
+
+### fragmentation (단편화)
+- 메모리에 프로세스들을 적재하고 제거하다보면 메모리에 생기는 작은 공간들
+- 내부 단편화 (internal fragmentation) : 파티션 내부에서 사용되지 않는 부분
+- 외부 단편화 (external fragmentation) : 메모리 공간 중 사용하지 못하는 부분
+  - 해결책) compaction!!
+  - 사용중인 메모리 영역을 한 곳으로 몰아서 큰 hole을 만드는 방법 / 비용이 많이 듬
+
 ### Demand paging
-- 대부분의 시스템은 페이징 기법을 사용 -> 실제 필요할 때 해당 Page를 메모리에 적재하자
-- 필요한 양만 올리기 때문에 더 많은 프로그램을 동시에 실행시킬 수 있음
+- 대부분의 시스템은 페이징 기법을 사용 -> 실제 필요할 때 해당 Page를 메모리에 적재하자!
+- 필요한 양만 올리기 때문에 더 많은 프로그램 수용 + 빠른 응답 시간 + 메모리 사용량 감소
 - page table의 valid/invalid bit 사용
-  - invalid : 해당 페이지가 물리적 메모리에 없는 경우, 사용되지 않는 주소 영역인 경우
+  - invalid : 해당 페이지가 물리적 메모리에 없는 경우 / 사용되지 않는 주소 영역인 경우
   - 주소 변환시 valid bit = 0 -> 요청한 페이지가 메인 메모리에 없음 = page fault
 
 ### page fault
 - 인터럽트를 통해 디스크에 접근하여 해당 페이지를 메인 메모리로 읽어옴 
-- 오래 걸리는 작업 -> page fault rate을 최소화하자
-- replacement algorithm
+- 오래 걸리는 작업 -> page fault rate을 최소화하는 것이 목표
+- page replacement algorithm
   - 물리적 메모리에서 내쫓을 frame을 선정하는 알고리즘
+  - page fault rate을 최소화하기 위해 곧바로 사용되지 않을 page를 쫓아내는 
   - FIFO, LRU, LFU ...
 
 ### Thrashing
