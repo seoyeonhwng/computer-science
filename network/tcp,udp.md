@@ -1,5 +1,5 @@
 ### UDP
-- connectionless / unreliable delivery / unorder delivery (비교적 덜 정교한 비연결 프로토콜)
+- connectionless / unreliable delivery / unorder delivery (신뢰성을 보장하지 않는 비연결 프로토콜)
 - 간단한 데이터를 빠르게 (실시간) 전송하는 서비스에 적합 ex) 영상 스트리밍, DNS
 - 제공하는 서비스 (요놈과 UDP 세그먼트 헤더값을 연결해서 기억!!)
   1. **multiplexing과 demultiplexing**
