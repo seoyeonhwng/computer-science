@@ -9,7 +9,7 @@
 ### 비연결성 (connectionless)
 - 한 번의 TCP 연결로 한 번의 HTTP 요청과 응답을 하고나면 TCP 연결을 끊음
 - 단점) TCP 연결/종료로 인한 오버헤드
-- 해결책) keep-alive 헤더 사용 (Persistent connection)
+- 해결책) connection:keep-alive 헤더 사용 (Persistent connection)
 
 ### 무상태성 (stateless)
 - 이전에 주고 받았던 request/response를 기억하지 않음
@@ -57,12 +57,14 @@ Content-Type: text/html
 ```
 
 ### GET 방식 vs POST 방식
-- GET 방식 (정보 조회할때 사용하는 메소드)
+- GET 방식
+    - 웹브라우저가 웹서버에게 데이터를 요청할때 주로 사용 
     - 필요한 데이터를 HTTP 메세지 header의 url에 담아서 전송 (쿼리 스트링)
     - 전송 데이터의 한계 (길이의 한계)
     - 데이터가 그대로 보여지기 때문에 보안성이 떨어짐
     - POST 방식보다 전송 속도가 빠르다
 - POST 방식 (정보 생성, 변경할때 사용하는 메소드)
+    - 웹브라우저가 웹서버에게 데이터를 전달할때  
     - 필요한 데이터를 HTTP 메세지의 body에 담아서 전송
     - 대용량 데이터 전송 가능
     - 데이터가 보여지기 않기 때문헤 GET보다 보안성이 높다
