@@ -2,6 +2,8 @@
 - 도메인 이름을 IP주소로 변환하는 시스템
 - 인터넷에서 통신을 하려면 IP주소를 알아야함 -> 모든 IP주소를 외울 수 없기 때문에 문자(도메인)를 사용
 - DNS를 여러 서버로 나누고 계층 구조로 구성 (분산 계층 데이터베이스)
+- DNS는 Application layer protocol
+  - DNS의 쿼리를 application layer에서만 이해할 수 있기 때문 
 
 ### DNS 서버의 종류
 - DNS resolver : iterative query를 받는 서버 
