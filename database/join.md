@@ -8,7 +8,8 @@
 
 ### 물리적 조인
 - 릴레이션의 조인을 계산하는 알고리즘
-- 두 릴레이션 r과 s를 a라는 컬럼으로 조인하는 경우 내부적으로 조인 결과를 어떻게 얻는가
+- 쿼리에 조인이 포함되면 옵티마이저는 테이블 간의 조인 작업을 수행하여 결과를 얻음 (두 릴레이션 r과 s를 a라는 컬럼으로 조인)
+- 조인 방법 : nested loop join, sort merge join, hash join
 
 ### nested-loop join
 ```
@@ -20,25 +21,31 @@ for each tuple Tr in r do begin
 end
 ```
 - 이중 for문 / r은 outer table, s는 inner table
-- outer table의 처리 범위를 하나씩 접근하여 일치하는 값을 inner table에서 순차적으로 찾음
-- 두 릴레이션의 모든 튜플 쌍을 검사하기 때문에 비용이 많이 듬
-- 대량의 테이블이거나 inner relation에 인덱스가 생성되어있지 않은 경우 비효율적
-- 소량의 데이터를 가진 테이블이 outer relation으로 설정하는 것이 성능이 유리함
+- outer table의 row에 하나씩 접근하여 일치하는 값을 inner table에서 순차적으로 찾음
+- 두 테이블의 모든 튜플 쌍을 검사하기 때문에 비용이 많이 듬 -> 좁은 범위에 유리한 성능
+- 어떤 테이블을 outer table로 선택하는지가 성능을 결정
+  - 크기가 작은 테이블을 outer table로 해야함
+  - outer table의 행 개수만큼 join이 수행되기 때문
+- inner table에 인덱스가 생성되어 있지 않다면 비효율적
+- 조인 조건에 동등 연산자(=)를 사용하는 경우 옵티마이저는 NLJ를 선택
+
 
 ### sort-merge join
-- nested-loop join처럼 이중 for문으로 동작
-- outer table과 inner table을 각각 join 컬럼을 기준으로 정렬 후 join하는 방식
-- inner table에 인덱스가 없는 경우 nested-loop join 대신 사용 가능
+- 두 테이블을 각각 join 컬럼을 기준으로 정렬 -> 조인 조건에 맞는 건들을 찾아 merge함
+- 많은 양의 데이터를 처리 or 적당한 인덱스가 없는 경우 NLJ보다 성능에 유리함
+- 단점) sort할때 시간이 오래 걸림
+- 조인 조건에 비동등 연산자(<,>)를 사용하는 경우 옵티마이저는 SMJ를 선택
 
 ### hash join
 ```
-for each tupe Tr in Hri do begin
-  for each matching tupe Ts in Hsi do begin
+for each tuple Tr in Hri do begin
+  for each matching tuple Ts in Hsi do begin
     add (Tr, Ts) to the result;
   end
 end
 ```
 - 아이디어) 두 튜플이 조인 조건을 만족한다면 두 튜플은 동일한 해시 값을 가짐
-- outer/inner table의 조인 컬럼에 대해 각각 동일한 해시 값을 가지는 집합(파티션)으로 분할
-- 각 파티션에 대해서 nested loop join처럼 이중 for문으로 조인
-- 대용량의 데이터를 조인할 때 적절함
+- 두 테이블 중 row 수가 적은 테이블을 대상으로 해시 테이블 생성
+- 나머지 테이블의 row에 하나씩 접근하여 해시값을 생성 -> 해당 해시 테이블에서 일치하는 값을 찾음
+- sort에 대한 부담을 줄이기 위한 방안
+- 조인 조건에 동등 연사자를 사용한 경우에만 사용 가능
