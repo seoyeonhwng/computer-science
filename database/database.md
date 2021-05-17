@@ -25,6 +25,12 @@
 - 도메인 무결성 : 각 속성의 타입, null 허용 등을 정의하고 올바른 데이터 타입이 입력되었는지 확인
 - 키 무결성 : 한 릴레이션에는 최소한 하나의 키가 존재해야함
 
+### KEY
+- super key : 테이블의 레코드를 유일하게 식별할 수 있는 attribute 집합 / 유일성
+- candidate key : super key 중에서 유일하게 식별하는데 꼭 필요한 속성으로만 구성된 key / 유일성과 최소성
+- primary key : candidate key 중에서 선택된 key
+- foreign key : 다른 테이블의 레코드를 유일하게 식별할 수 있는 key / 참조하는 테이블의 primary key
+
 ---
 ### DBMS의 성능
 - DBMS는 데이터를 블록 단위로 하드 디스크에 저장
