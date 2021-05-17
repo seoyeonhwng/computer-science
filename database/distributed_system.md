@@ -30,6 +30,14 @@
   - 노드들 간의 데이터 동기화가 보장되지 않아 일관성있는 데이터를 얻지 못할 수 있음
   - Master 노드가 다운되면 복구 및 대처가 까다로움
   - 쓰기 작업만 엄청 많다면 성능을 높일 수 없음!!
+
+### cache (분산 캐시)
+<img src="https://user-images.githubusercontent.com/49056225/118489701-1c9d2d80-b758-11eb-8aee-330e69f20423.png" width="600" height="500"><br>
+- cache = 나중에 요청 올 결과를 미리 저장해두었다가 빠르게 서비스해주는 것
+- 캐시에 쿼리에 대한 결과가 있는지 확인하고 없는 경우만 DB에 요청
+- 장점) 근본적인 문제인 RDBMS로의 쿼리 요청을 줄일 수 있음
+- 주로 캐시 DB로 Redis를 많이 사용함
+  - in-memory 기반 -> 읽기 속도 빠름 / 다양한 자료구조를 제공
   
 ### Partitioning
 - 하나의 테이블이 너무 커졌으니 쪼개자!
@@ -46,6 +54,7 @@
 <img src="https://user-images.githubusercontent.com/49056225/116812140-29325b00-ab88-11eb-810a-125b646e8c86.png" width="600" height="500"><br>
 - 서버를 여러 개의 작은 서버(=shard)로 분할 / shard에는 모두 다른 레코드를 저장함
 - 어떤 레코드를 어떤 샤드에 저장하는지 rule을 정해야함 -> 데이터를 균일하게 분산할 수 있어야 좋은 rule!
+- 중간에 router를 두어야함
 - sharding의 여러 가지 방법 (샤딩 전략)
   - hash sharding (modular sharding)
     - shard key를 해싱/모듈러 연산한 결과로 어느 샤드로 갈지 결정
