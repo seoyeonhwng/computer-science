@@ -1,8 +1,9 @@
 ### 논리적 조인
 - INNER JOIN : A와 B의 교집합
-- LEFT OUTER JOIN : A의 모든 데이터와 B와 매칭이 되는 레코드를 포함
-- RIGHT OUTER JOIN : B의 모든 데이터와 A와 매칭이 되는 레코드를 포함
-- FULL OUTER JOIN : A와 B의 합집합
+- OUTER JOIN : join 조건에 맞지 않은 튜플도 결과로 출력하기 위한 방법
+  - LEFT OUTER JOIN : A와 B의 교집합 + join 조건에 맞지 않는 A의 튜플
+  - RIGHT OUTER JOIN : A와 B의 교집합 + join 조건에 맞지 않는 B의 튜플
+  - FULL OUTER JOIN : A와 B의 합집합
 - CROSS JOIN : A의 각 행과 B의 각 행을 다 조합한 결과 (cartesin product)
 - SELF JOIN : 자기 자신과 조인
 
