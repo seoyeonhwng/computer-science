@@ -15,17 +15,23 @@
 ### 동시성 제어를 하지 않으면 발생할 수 있는 문제
 - lost update : 트랜잭션A가 업데이트한 내용을 트랜잭션B가 덮어씀 (무효화)
 - dirty read : 완료되지 않은 트랜잭션이 갱신한 데이터를 읽음
-- uprepeatable read : 하나의 트랜잭션에서 같은 select문을 수행할때 서로 다른 값을 읽음
+- unrepeatable read : 하나의 트랜잭션에서 같은 select문을 수행할때 서로 다른 값을 읽음
 - phantom read : 하나의 트랜잭션에서 레코드를 두번 읽었을때, 첫번째 쿼리에서 없던 레코드가 두번째 쿼리에서 나타나는 현상
   - 트랜잭션 실행 도중 새로운 레코드 삽입을 허용하기 때문에 나타나는 현상
   
 ### Lock의 종류
-- S-lock (Shared Lock) : 트랜잭션에서 READ를 목적으로 데이터에 접근할때 사용 -> 다른 트랜잭션과 공유 가능
-- X-lock (Exclusive Lock) : 트랜잭션에서 UPDATE를 목적으로 데이터에 접근할때 사용 -> 다른 트랜잭션과 공유 불가능
-- lock -> 데드락 문제 발생 가능!
+- S-lock (Shared Lock)
+  - 트랜잭션에서 READ 작업을 수행할때 사용하는 lock / 다른 트랜잭션과 공유 가능
+  - 어떤 자원에 S-lock이 걸려있으면 다른 트랜잭션이 S-lock은 걸 수 있지만 X-lock은 걸 수 없음 
+- X-lock (Exclusive Lock)
+  - 트랜잭션에서 UPDAT 작업을 수행할때 사용하는 lock / 다른 트랜잭션과 공유 불가능
+  - 어떤 자원에 X-lock이 걸려있으면 다른 트랜잭션은 S-lock과 X-lock 모두 걸 수 없음
+- lock의 문제점 : 1) 트랜잭션의 직렬화 2) 데드락 발생 가능
+- lock의 범위가 넓어질수록 동시에 접근할 수 없는 자원이 많아지므로 동시성은 떨어짐
 
 ### Isolation Level
 - 트랜잭션에서 일관성 없는 데이터를 허용하는 수준
+- isolation level에 따라 서로 다른 locking 전략을 취함 / level이 높아질수록 더 많이, 빡빡하게 lock을 거는 것
 - SERIALIZABLE
   - 모든 작업을 하나의 트랜잭션에서 처리하는 것과 같음 (가장 높은 고립 수준)
 - REPEATABLE READ
