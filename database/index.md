@@ -68,6 +68,7 @@
 - 인덱스 파일이 특정 컬럼(search key)값에 대해 정렬된 순서로 저장
 - clustering index (= primary index)
   - search key가 primary key인 경우
+  - DBMS에서 PK는 자동으로 clustering index가 적용됨
   - 데이터 파일이 저장된 순서와 인덱스 파일이 저장된 순서가 일치
   - 테이블당 한 개만 생성 가능
 - nonclustering index (= secondary index)
