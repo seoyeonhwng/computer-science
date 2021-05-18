@@ -58,7 +58,7 @@
 
 ### 스케쥴러
 - long-term scheduler (장기 스케줄러 = job scheduler)
-  - 시작 프로세스 중 어떤 것들을 ready queue로 보낼지 결정 (new -> ready)
+  - 어떤 프로세스에게 메모리를 할당할지 결정 (new -> ready)
   - degree of multiprogramming을 제어 (메모리에 몇 개의 프로그램이 동시에 올라가는지) 
 - short-term scheduler (단기 스케줄러 = CPU scheduler)
   - 어떤 프로세스에게 CPU를 줄지 결정 (ready -> running) 
@@ -68,7 +68,7 @@
 
 ### 프로세스와 관련된 시스템 콜
 - fork() : 자식 프로세스를 복제 생성하는 시스템 콜
-- exec() : 프로세스를 완전히 새로운 프로그램으로 덮어씌우는 시스템 콜
+- exec() : 프로세스를 완전히 새로운 프로그램으로 덮어 씌우는 시스템 콜
 - wait() : 자식 프로세스가 종료될 때까지 잠들어서 기다리는 시스템 콜
 - exit() : 자식 프로세스가 모든 자원을 반납하고 부모 프로세스에게 알리는 시스템 콜
 
