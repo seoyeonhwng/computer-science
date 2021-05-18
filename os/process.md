@@ -50,22 +50,6 @@
 - context switching이 발생하는 경우
   - I/O 작업 / CPU 사용 시간 만료 (타이머) / 인터럽트 
 
-### 프로세스 스케쥴링
-- 프로세스들은 각 큐들을 오가며 수행됨
-- job queue : 현재 시스템 내에 있는 모든 프로세스의 집합
-- ready queue : 현재 메모리 내에 있으면서 CPU를 잡아서 실행되기를 기다리는 프로세스의 집합
-- device queue : I/O 장치의 처리를 기다리는 프로세스의 집합
-
-### 스케쥴러
-- long-term scheduler (장기 스케줄러 = job scheduler)
-  - 어떤 프로세스에게 메모리를 할당할지 결정 (new -> ready)
-  - degree of multiprogramming을 제어 (메모리에 몇 개의 프로그램이 동시에 올라가는지) 
-- short-term scheduler (단기 스케줄러 = CPU scheduler)
-  - 어떤 프로세스에게 CPU를 줄지 결정 (ready -> running) 
-- medium-term scheduler (중기 스케쥴러 = swapper)
-  - 어떤 프로세스에게서 메모리를 뺏아가 디스크로 내쫓을지 결정
-  - degree of multiprogramming을 제어
-
 ### 프로세스와 관련된 시스템 콜
 - fork() : 자식 프로세스를 복제 생성하는 시스템 콜
 - exec() : 프로세스를 완전히 새로운 프로그램으로 덮어 씌우는 시스템 콜
