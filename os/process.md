@@ -33,17 +33,19 @@
   
 ### PCB (Process Control Block)
 - 운영체제가 각 프로세스를 관리하기 위해 프로세스에 대한 정보를 저장하는 자료구조
-- 프로세스가 한나 생길때마다 운영체제는 커널 주소 공간의 data영역에 PCB를 생성
+- 프로세스가 하나 생길 때마다 운영체제는 커널 주소 공간의 data영역에 PCB를 생성
 - 구성 요소
   - 운영체제가 관리상 사용하는 정보 : Process state / Process ID / scheduling information / priority
   - CPU 수행 관련 하드웨어 값 : Program counter / registers
   - 메모리 관련 : code, data, stack의 위치 정보
     
-### 문맥 교환 (context switch)
+### 문맥 교환 (context switching)
 <img src="https://user-images.githubusercontent.com/49056225/116798336-500d7480-ab29-11eb-9f31-254b30607952.png" width="500" height="300"><br>
 - CPU를 한 프로세스A(스레드)에서 다른 프로세스B(스레드)로 넘겨주는 과정
 - 현재 CPU의 PC, 레지스터 값을 읽어서 뺏기는 프로세스의 PCB에 저장
 - 실행할 프로세스의 PCB의 값을 읽어서 CPU에 복원
+- context switching이 발생하는 경우
+  - I/O 작업 / CPU 사용 시간 만료 (타이머) / 인터럽트 
 
 ### 프로세스 스케쥴링
 - 프로세스들은 각 큐들을 오가며 수행됨
@@ -63,7 +65,7 @@
 
 ### 프로세스와 관련된 시스템 콜
 - fork() : 자식 프로세스를 복제 생성하는 시스템 콜
-- exec() : 프로세스를 완전히 새로운 프로그램ㅁ으로 덮어씌우는 시스템 콜
+- exec() : 프로세스를 완전히 새로운 프로그램으로 덮어씌우는 시스템 콜
 - wait() : 자식 프로세스가 종료될 때까지 잠들어서 기다리는 시스템 콜
 - exit() : 자식 프로세스가 모든 자원을 반납하고 부모 프로세스에게 알리는 시스템 콜
 
@@ -104,7 +106,8 @@
 - multi-thread
   - 하나의 프로세스 안에서 여러 개의 쓰레드가 처리
   - context switching 비용이 적음 (프로세스 자원을 공유하기 때문)
-  - 단점) 하나의 스레드가 종료되면 전체 스레드가 종료 / 자원을 공유하는 만큼 충돌 주의 (thread-safe 하게) -> 동기화!!
+  - 단점1) 하나의 스레드가 종료되면 전체 스레드가 종료
+  - 단점2) 자원을 공유하는 만큼 충돌 주의 (thread-safe 하게) -> 동기화 / 동기화로 인한 병목 현상이 발생하여 성능 저하
 - multi-thread가 multi-process보다 좋은 이유
   - context switching시 오버헤드가 적음
   - stack을 제외한 모든 메모리를 공유하기 때문에 자원을 효율적으로 사용 가능
