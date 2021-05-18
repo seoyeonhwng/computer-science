@@ -22,7 +22,10 @@
 
 ### 프로세스의 주소 공간
 <img src="https://user-images.githubusercontent.com/49056225/116216546-b4c07c00-a783-11eb-9f47-a270a573cf1f.png" width="600" height="400"><br>
-
+- data 영역 : 프로그램 실행 시 할당되며 프로그램 종료 시 소멸됨
+- stack 영역 : 함수 호출 시 할당되며 함수 종료 시 소멸됨
+- heap 영역은 사용자에 의해 동적으로 메모리를 할당되기 때문에 속도는 stack이 더 빠름
+ 
 ### 프로세스의 상태
 <img src="https://user-images.githubusercontent.com/49056225/116199452-1972db00-a772-11eb-860e-a528ff316759.png" width="500" height="300"><br>
 - Running : CPU 제어권을 가지고 명령어를 수행 중인 상태 / running 상태의 프로세스는 매 순간 하나!
@@ -107,7 +110,7 @@
   - 하나의 프로세스 안에서 여러 개의 쓰레드가 처리
   - context switching 비용이 적음 (프로세스 자원을 공유하기 때문)
   - 단점1) 하나의 스레드가 종료되면 전체 스레드가 종료
-  - 단점2) 자원을 공유하는 만큼 충돌 주의 (thread-safe 하게) -> 동기화 / 동기화로 인한 병목 현상이 발생하여 성능 저하
+  - 단점2) 자원을 공유하는 만큼 충돌 주의 (thread-safe 하게) -> 동기화 / 동기화 처리로 인한 병목 현상이 발생하여 성능 저하
 - multi-thread가 multi-process보다 좋은 이유
   - context switching시 오버헤드가 적음
   - stack을 제외한 모든 메모리를 공유하기 때문에 자원을 효율적으로 사용 가능
