@@ -104,5 +104,5 @@
     - 특정 패킷만 유실되었다면 timeout보다 3 Duplicate ACK가 먼저 발생
     - timeout이 발생한 경우 네트워크 상황이 더 좋지 않음
 - Refinement (Tahoe & Reno)
-  - timeout에 의한 loss event라면 이전과 똑같이 행동 (threshold를 절반으로 줄이고 slow start부터 시작) = fast retransmit
-  - 3 Dup ACK에 의한 loss event라면 threshold와 CongWin을 절반으로 줄이고 linear increase부터 시작 
+  - timeout에 의한 loss event라면 이전과 똑같이 행동 (threshold를 절반으로 줄이고 slow start부터 시작)
+  - 3 Dup ACK에 의한 loss event라면 threshold와 CongWin을 절반으로 줄이고 linear increase부터 시작  = fast recovery
