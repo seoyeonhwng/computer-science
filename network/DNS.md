@@ -16,7 +16,8 @@
 
 ### DNS 동작 과정
 - 먼저 Local DNS(컴퓨터에 미리 설정되어 있는 DNS)에 해당 도메인에 대한 IP주소가 있는지 확인
-- Local DNS에 없다면 여러 DNS 서버에게 물어봐서 IP주소를 알아냄 (Recursive query)
+- Local DNS에 없다면 Local DNS는 다른 DNS 서버들과 통신 시작 / 다른 DNS 서버에게 DNS query를 전송함
+- Recursive query : Local DNS가 (root 네임 서버 -> .com 네임 서버 -> example.com 네임 서버)에게 물어봐서 IP주소를 찾는 과정
 <img src="https://user-images.githubusercontent.com/49056225/114837760-04f81f80-9e0f-11eb-805e-20d18111d89c.png" width="600" height="400">
 
 ### DNS는 UDP를 사용
