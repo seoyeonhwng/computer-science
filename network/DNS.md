@@ -1,7 +1,7 @@
 ### DNS (Domain Name System)
 - 도메인 이름을 IP주소로 변환하는 분산형 데이터베이스 시스템
 - DNS는 Domain Name Space를 저장하고 관리
-- Domain Name Space는 최상위에 root 네임서버가 존재하고 그 밑에 하위 도메인에 대한 정보를 관리 -> 계층적 구조
+- Domain Name Space는 최상위에 root 네임서버가 존재하고 그 밑에 각 DNS 서버들이 하위 도메인에 대한 정보를 관리 -> 계층적 구조
 - 왜) 인터넷에서 통신을 하려면 IP주소를 알아야함 -> 모든 IP주소를 외울 수 없기 때문에 문자(도메인)를 사용
 - DNS는 Application layer protocol
   - DNS의 쿼리를 application layer에서만 이해할 수 있기 때문 
