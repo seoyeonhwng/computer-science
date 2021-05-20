@@ -5,6 +5,10 @@
   - 라우터에는 end-to-end connection 개념없음 -> 그저 dst IP주소를 보고 적절한 경로로 패킷을 전달!
 - 프로토콜 : IP, ICMP
 
+### 라우터 vs 스위치
+- 라우터 : 수신한 패킷의 정보를 통해 경로를 설정하여 패킷을 전송
+- 스위치 : 내부 네트워크에서 MAC주소를 이용하여 해당 프레임을 
+
 ### IP (Internet Protocol)
 - 네트워크 계층의 데이터 전송 프로토콜 
 - best-effort 전송 (전송한 패킷의 도착을 보장하지 않음 = unreliable)
